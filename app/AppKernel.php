@@ -20,7 +20,8 @@ class AppKernel extends Kernel
     protected function registerProjectBundles()
     {
         return [
-            // your app bundles should be registered here
+          new Swp\Bundle\ImageFieldBundle\SwpImageFieldBundle(),
+          new Webkul\CategoryExtendBundle\CategoryExtendBundle(),
         ];
     }
 

@@ -9,12 +9,19 @@
             "homepage": "http://www.akeneo.com"
         }
     ],
+    "repositories": [
+      {
+        "type": "vcs",
+        "url": "https://github.com/software-partner/webkul-akeneo-category-extend-bundle.git"
+      }
+    ],
     "autoload": {
         "psr-0": {
             "": "src/"
         },
         "psr-4": {
-          "Pim\\Upgrade\\": "upgrades/"
+          "Pim\\Upgrade\\": "upgrades/",
+          "": "lib/swp-akeneo-bundle/src/"
         },
         "classmap": [ "app/AppKernel.php", "app/AppCache.php" ],
         "exclude-from-classmap": [
@@ -23,8 +30,9 @@
         ]
     },
     "require": {
-        "php": ">=7.2.0",
-        "akeneo/pim-community-dev": "~3.1.7"
+      "php": ">=7.2.0",
+      "akeneo/pim-community-dev": "~3.1.7",
+      "webkul/akeneo-category-extend-bundle": "@dev"
     },
     "require-dev": {
         "doctrine/migrations": "1.5.0",
