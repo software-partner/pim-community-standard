@@ -1,0 +1,3 @@
+[submodule "lib/swp-akeneo-bundle"]
+	path = lib/swp-akeneo-bundle
+	url = git@github.com:software-partner/swp-akeneo-bundle.git
