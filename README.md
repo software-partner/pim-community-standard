@@ -20,6 +20,44 @@ https://docs.akeneo.com/master/install_pim/manual/system_requirements/system_req
 Installation instructions
 -------------------------
 
+### SWP specific installation
+
+Clone repo and checkout development branch:
+
+```
+git clone git@github.com:software-partner/swp-akeneo-dev.git
+cd swp-akeneo-dev
+git checkout swp-development
+git submodule init
+git submodule update
+```
+
+Use  distributed configuration:
+
+```
+cp docker-compose.override.yml.dist docker-compose.override.yml
+cp app/config/parameters.yml.dist app/config/parameters.yml
+cp .env.dist .env
+```
+
+Startup containers:
+
+```
+docker-compose up -d
+```
+
+Make sure your GitHub token is provided (in composer configuration)
+
+Run Akeneo installation scripts:
+
+```
+bin/docker/pim-dependencies.sh
+bin/docker/pim-initialize.sh
+```
+Akeneo should now be reachable via http://localhost:8080/
+
+Please check https://docs.akeneo.com/3.1/install_pim/docker/installation_docker.html
+
 ### Recommended installation
 
 To install Akeneo PIM for a PIM project or for evaluation, please follow: https://docs.akeneo.com/master/install_pim/manual/installation_ce_archive.html
