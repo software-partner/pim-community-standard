@@ -58,6 +58,16 @@ Akeneo should now be reachable via http://localhost:8080/
 
 Please check https://docs.akeneo.com/3.1/install_pim/docker/installation_docker.html
 
+
+#### Dump production database
+
+See https://devcenter.heroku.com/articles/jawsdb#backup-import-data-from-jawsdb-or-another-mysql-database
+
+```shell script
+mysqldump --column-statistics=0 -h OLDHOST -u OLDUSER -pOLDPASS OLDDATABASE > backup.sql
+
+```
+
 ### Recommended installation
 
 To install Akeneo PIM for a PIM project or for evaluation, please follow: https://docs.akeneo.com/master/install_pim/manual/installation_ce_archive.html

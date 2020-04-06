@@ -1,5 +1,6 @@
 <?php
 
+use Swp\Bundle\BulkPriceFieldBundle\SwpBulkPriceFieldBundle;
 use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\HttpKernel\Kernel;
 
@@ -20,6 +21,8 @@ class AppKernel extends Kernel
     protected function registerProjectBundles()
     {
         return [
+          new SwpBulkPriceFieldBundle(),
+          new Swp\Bundle\DeliveryTimeFieldBundle\SwpDeliveryTimeFieldBundle(),
           new Swp\Bundle\ImageFieldBundle\SwpImageFieldBundle(),
           new Webkul\CategoryExtendBundle\CategoryExtendBundle(),
         ];
